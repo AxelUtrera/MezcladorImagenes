@@ -1,10 +1,7 @@
-from msilib.schema import Patch
+
 import random 
-from clases.Aleatorio import Aleatorio
 from PIL import Image
 import pathlib
-
-
 
 
 def contarArchivos(carpetaBase, carpetaTipo):
@@ -31,10 +28,9 @@ def calcularAlto(imagen1, imagen2):
     alto =(imagen1.height - imagen2.height) // 2
     return alto
 
-def crearCombinacion(numeroCombinaciones):
+def crearCombinacion(numeroCombinaciones, nombreProyecto):
     
     for i in range(numeroCombinaciones):
-        nombreProyecto = "OldSkull"
         rutaFondo = construirRuta(nombreProyecto, "fondo", "jpg")
         rutaBase = construirRuta(nombreProyecto, "base", "png")
         rutaCuerpo = construirRuta(nombreProyecto, "cuerpo", "png")
@@ -64,6 +60,7 @@ def crearCombinacion(numeroCombinaciones):
         
 
 if __name__ == "__main__":
+    nombreProyecto = input("Ingrese el nombre del proyecto: ")
     numeroCombinaciones = int(input("numero de combinaciones: "))
-    crearCombinacion(numeroCombinaciones)
+    crearCombinacion(numeroCombinaciones, nombreProyecto)
     
